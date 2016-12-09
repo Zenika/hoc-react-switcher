@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 export default (config) => {
   const {
@@ -6,14 +6,12 @@ export default (config) => {
     states = {},
   } = config || {}
 
-  return class extends Component {
-    render() {
-      const propValue = this.props[prop]
-      if (propValue && states[propValue]) {
-        const ComposedComponent = states[propValue]
-        return <ComposedComponent {...this.props} />
-      }
-      return null
+  return () => {
+    const propValue = this.props[prop]
+    if (propValue && states[propValue]) {
+      const ComposedComponent = states[propValue]
+      return <ComposedComponent {...this.props} />
     }
+    return null
   }
 }
