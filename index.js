@@ -18,15 +18,15 @@ exports.default = function (config) {
       states = _ref$states === undefined ? {} : _ref$states,
       DefaultComponent = _ref.DefaultComponent;
 
-  return function () {
-    var propValue = undefined.props[prop];
+  return function (props) {
+    var propValue = props[prop];
 
     if (propValue === undefined && !DefaultComponent) {
       throw new Error('Your prop value should match one of the `states` or\n      you should provide a `DefaultComponent`');
     }
-    if (propValue === undefined || !states[propValue]) return _react2.default.createElement(DefaultComponent, undefined.props);
+    if (propValue === undefined || !states[propValue]) return _react2.default.createElement(DefaultComponent, props);
 
     var ComposedComponent = states[propValue];
-    return _react2.default.createElement(ComposedComponent, undefined.props);
+    return _react2.default.createElement(ComposedComponent, props);
   };
 };
