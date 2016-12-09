@@ -8,14 +8,12 @@ export default (config) => {
 
   return class extends Component {
     render() {
-      return (props) => {
-        const propValue = props[prop]
-        if (propValue && states[propValue]) {
-          const ComposedComponent = states[propValue]
-          return <ComposedComponent {...props} />
-        }
-        return null
+      const propValue = this.props[prop]
+      if (propValue && states[propValue]) {
+        const ComposedComponent = states[propValue]
+        return <ComposedComponent {...this.props} />
       }
+      return null
     }
   }
 }

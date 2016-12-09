@@ -37,14 +37,12 @@ exports.default = function (config) {
     _createClass(_class, [{
       key: 'render',
       value: function render() {
-        return function (props) {
-          var propValue = props[prop];
-          if (propValue && states[propValue]) {
-            var ComposedComponent = states[propValue];
-            return _react2.default.createElement(ComposedComponent, props);
-          }
-          return null;
-        };
+        var propValue = this.props[prop];
+        if (propValue && states[propValue]) {
+          var ComposedComponent = states[propValue];
+          return _react2.default.createElement(ComposedComponent, this.props);
+        }
+        return null;
       }
     }]);
 
