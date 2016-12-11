@@ -3,12 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.errorMessage = undefined;
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var errorMessage = exports.errorMessage = 'Your prop value should match one of the `states` or\nyou should provide a `DefaultComponent`';
 
 exports.default = function (config) {
   var _ref = config || {},
@@ -22,7 +25,7 @@ exports.default = function (config) {
     var propValue = props[prop];
 
     if (propValue === undefined && !DefaultComponent) {
-      throw new Error('Your prop value should match one of the `states` or\n      you should provide a `DefaultComponent`');
+      throw new Error(errorMessage);
     }
     if (propValue === undefined || !states[propValue]) return _react2.default.createElement(DefaultComponent, props);
 
