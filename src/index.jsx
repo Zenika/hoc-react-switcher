@@ -1,5 +1,8 @@
 import React from 'react'
 
+export const errorMessage = `Your prop value should match one of the \`states\` or
+you should provide a \`DefaultComponent\``
+
 export default (config) => {
   const {
     prop = 'state',
@@ -11,8 +14,7 @@ export default (config) => {
     const propValue = props[prop]
 
     if (propValue === undefined && !DefaultComponent) {
-      throw new Error(`Your prop value should match one of the \`states\` or
-      you should provide a \`DefaultComponent\``)
+      throw new Error(errorMessage)
     }
     if (propValue === undefined || !states[propValue]) return <DefaultComponent {...props} />
 
