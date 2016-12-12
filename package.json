@@ -1,6 +1,6 @@
 {
   "name": "hoc-react-switcher",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "React component which displays one of its possible states depending on a prop value",
   "main": "index.js",
   "dependencies": {},
