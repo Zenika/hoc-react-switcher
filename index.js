@@ -11,7 +11,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var errorMessage = exports.errorMessage = 'Your prop value should match one of the `states` or\nyou should provide a `DefaultComponent`';
+var errorMessage = exports.errorMessage = 'Your prop value should match one of the `states` or you should provide a `DefaultComponent`'; // eslint-disable-line max-len
 
 exports.default = function (config) {
   var _ref = config || {},
@@ -24,9 +24,7 @@ exports.default = function (config) {
   return function (props) {
     var propValue = props[prop];
 
-    if (propValue === undefined && !DefaultComponent) {
-      throw new Error(errorMessage);
-    }
+    if (propValue === undefined && !DefaultComponent) throw new Error(errorMessage);
     if (propValue === undefined || !states[propValue]) return _react2.default.createElement(DefaultComponent, props);
 
     var ComposedComponent = states[propValue];
