@@ -6,6 +6,7 @@ import switcher, { errorMessage } from './index.jsx'
 
 const FirstComponent = () => <div />
 const SecondComponent = () => <div />
+const ThirdComponent = () => <div />
 const DefaultComponent = () => <div />
 
 const getWrapped = (config, props) => {
@@ -28,11 +29,26 @@ describe('react-switcher', () => {
     equals(wrapper, DefaultComponent)
   })
 
-  it('should return DefaultComponent when prop value is undefined and DefaultComponent is present', () => {
+  it(`should return DefaultComponent when prop value is undefined and
+    DefaultComponent is present`, () => {
     const wrapper = getWrapped({
       states: {
         0: FirstComponent,
         1: SecondComponent,
+      },
+      DefaultComponent,
+    }, { state: undefined })
+
+    equals(wrapper, DefaultComponent)
+  })
+
+  it(`should return DefaultComponent when prop value is undefined and
+    one of the states is mapped to undefined`, () => {
+    const wrapper = getWrapped({
+      states: {
+        0: FirstComponent,
+        1: SecondComponent,
+        undefined: ThirdComponent,
       },
       DefaultComponent,
     }, { state: undefined })
