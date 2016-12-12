@@ -1,4 +1,6 @@
-# hoc-react-switcher [![CircleCI](https://circleci.com/gh/Zenika/hoc-react-switcher.svg?style=svg)](https://circleci.com/gh/Zenika/hoc-react-switcher)
+# hoc-react-switcher
+
+[![CircleCI](https://circleci.com/gh/Zenika/hoc-react-switcher.svg?style=svg)](https://circleci.com/gh/Zenika/hoc-react-switcher)
 
 ## what is this?
 This is a higher order component ("HOC") that display components depending of a prop.
