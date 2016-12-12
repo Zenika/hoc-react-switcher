@@ -3,13 +3,13 @@
 [![CircleCI](https://circleci.com/gh/Zenika/hoc-react-switcher.svg?style=svg)](https://circleci.com/gh/Zenika/hoc-react-switcher)
 
 ## what is this?
-This is a higher order component ("HOC") that display components depending of a prop.
+This is a higher order component ("HOC") which displays one of its possible states depending on a prop value.
 
 ## install
 `npm i --save hoc-react-switcher`
 
 ## use
-You have to wrap your component, and give some informations:
+You have to give a map of components and optionally some other informations:
 
 Parameter | Required | Default value | Description
 ----------|--------|---------------|-------------
