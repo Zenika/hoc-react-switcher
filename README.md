@@ -19,7 +19,7 @@ Parameter | Required | Default value | Description
 
 
 **Component.js**
-```(javascript)
+```(jsx)
 import React, { PropTypes } from 'react'
 import switcher from 'hoc-react-switcher'
 
